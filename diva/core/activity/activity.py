@@ -31,7 +31,6 @@ class Activity(DataType):
     [2] 11
 
     """
-    data_type: str = 'activity'
     activity_id: str = field(default_factory=lambda: str(uuid4()))
     proposal_id: str = ''
     activity_type: ActivityType = field(default=ActivityType.NULL)

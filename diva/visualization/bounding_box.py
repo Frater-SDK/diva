@@ -1,6 +1,6 @@
 from PIL import ImageDraw
 
-from frater.core import Frame, BoundingBox
+from ..core import Frame, BoundingBox
 
 
 def draw_bounding_box(bounding_box: BoundingBox, frame: Frame, color='red'):

@@ -1,4 +1,5 @@
-from enum import Enum
+import json
+from enum import IntEnum
 
 __long_names__ = ['null',
                   'person_opens_facility_door',
@@ -40,7 +41,7 @@ __long_names__ = ['null',
                   'theft']
 
 
-class ActivityType(Enum):
+class ActivityType(IntEnum):
     """
     Activity Types for DIVA
     """
@@ -90,6 +91,20 @@ class ActivityType(Enum):
     @classmethod
     def from_long_name(cls, long_name: str) -> 'ActivityType':
         return ActivityType(__long_names__.index(long_name))
+
+    def to_dict(self):
+        return {'data_type': 'activity_type', 'activity_type': self.value}
+
+    def to_json(self):
+        return json.dumps(self.to_dict())
+
+    @classmethod
+    def from_dict(cls, d: dict):
+        return ActivityType(d['activity_type'])
+
+    @classmethod
+    def from_json(cls, s: str):
+        return ActivityType.from_dict(json.loads(s))
 
 
 class ActivityTypeGroup:

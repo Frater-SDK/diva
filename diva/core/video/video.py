@@ -1,12 +1,13 @@
 from dataclasses import dataclass
 
+from frater.data_type import DataType
 from frater.logging import get_summary
 
 from .video_summary import get_video_summary
 
 
 @dataclass
-class Video:
+class Video(DataType):
     video_name: str = ''
     experiment: str = ''
     width: int = 0

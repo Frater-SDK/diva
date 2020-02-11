@@ -9,9 +9,9 @@ from typing import List
 import cv2
 from sortedcontainers import SortedKeyList
 
-from frater.core import Frame, BoundingBox, ActivityProposal
+from diva.core import Frame, BoundingBox, ActivityProposal
+from diva.visualization.bounding_box import draw_bounding_box
 from frater.io import json_to_frater
-from frater.visualization.bounding_box import draw_bounding_box
 
 
 def parse_args():

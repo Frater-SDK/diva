@@ -1,1 +1,1 @@
-from .frame_store import FrameStore
+from .frame_store import FrameStore, FrameStoreConfig

@@ -1,4 +1,4 @@
-from frater.core import Trajectory
+from ..core import Trajectory
 
 
 def visualize_trajectory(trajectory: Trajectory):

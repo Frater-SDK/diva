@@ -18,7 +18,7 @@ def json_to_bounding_box(bounding_box: Dict) -> BoundingBox:
     confidence = bounding_box['confidence']
     frame_index = bounding_box['frame_index']
 
-    return BoundingBox(x, y, w, h, confidence, frame_index)
+    return BoundingBox(x=x, y=y, w=w, h=h, confidence=confidence, frame_index=frame_index)
 
 
 def bounding_box_to_json(bounding_box: BoundingBox) -> Dict:

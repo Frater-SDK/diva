@@ -1,18 +1,35 @@
 import os
+from dataclasses import dataclass
 from functools import lru_cache
 
 from PIL import Image
-from frater.data_store import FileStore
+from frater.data_store import FileStore, FileStoreConfig
 
 from ...core import Frame, Modality, TemporalRange
 
 
+@dataclass
+class FrameStoreConfig(FileStoreConfig):
+    extension: str = ''
+    frame_filename_format: str = ''
+    ignore_modality: bool = True
+
+
 class FrameStore(FileStore):
-    def __init__(self, root, extension='.jpeg', frame_filename_format='%08d%s', ignore_modality: bool = False):
-        super(FrameStore, self).__init__(root)
-        self.extension = extension
-        self.frame_filename_format = frame_filename_format
-        self.ignore_modality = ignore_modality
+    def __init__(self, config: FrameStoreConfig):
+        super(FrameStore, self).__init__(config)
+
+    @property
+    def extension(self):
+        return self.config.extension
+
+    @property
+    def frame_filename_format(self):
+        return self.config.frame_filename_format
+
+    @property
+    def ignore_modality(self):
+        return self.config.ignore_modality
 
     @lru_cache
     def get_frame(self, video, frame_index, modality=Modality.RGB, experiment: str = '', timestamp: str = ''):
@@ -63,3 +80,7 @@ class FrameStore(FileStore):
         if not self.ignore_modality:
             video_root = os.path.join(video_root, modality.name)
         return [int(os.path.splitext(os.path.basename(filename))[0]) for filename in os.listdir(video_root)]
+
+    @classmethod
+    def get_frame_store(cls, config: FrameStoreConfig) -> 'FrameStore':
+        return FrameStore(config)

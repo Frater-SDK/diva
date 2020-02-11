@@ -2,6 +2,7 @@ from dataclasses import dataclass, field
 from typing import Union
 from uuid import uuid4
 
+from frater.data_type import DataType
 from frater.logging import get_summary
 
 from .object_summary import get_object_summary
@@ -12,7 +13,7 @@ from ..trajectory import Trajectory
 
 
 @dataclass
-class Object:
+class Object(DataType):
     object_id: str = field(default_factory=lambda: str(uuid4()))
     object_type: ObjectType = field(default=ObjectType.NULL)
     trajectory: Trajectory = field(default_factory=Trajectory)

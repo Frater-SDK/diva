@@ -1,6 +1,7 @@
 from dataclasses import dataclass, field
 from uuid import uuid4
 
+from frater.data_type import DataType
 from frater.logging import get_summary
 
 from .object_summary import get_object_detection_summary
@@ -9,7 +10,7 @@ from ..bounding_box import BoundingBox
 
 
 @dataclass
-class ObjectDetection:
+class ObjectDetection(DataType):
     object_detection_id: str = field(default_factory=lambda: str(uuid4()))
     object_type: ObjectType = field(default=ObjectType.NULL)
     bounding_box: BoundingBox = field(default_factory=BoundingBox)

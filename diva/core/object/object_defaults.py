@@ -2,6 +2,7 @@ from ..bounding_box import bounding_box_defaults
 from ..trajectory import trajectory_defaults
 
 OBJECT_JSON_DEFAULT = {
+    'data_type': 'object',
     'object_id': '',
     'object_type': 0,
     'trajectory': trajectory_defaults.TRAJECTORY_JSON_DEFAULT,
@@ -11,6 +12,7 @@ OBJECT_JSON_DEFAULT = {
 }
 
 OBJECT_DETECTION_JSON_DEFAULT = {
+    'data_type': 'object_detection',
     'object_detection_id': '',
     'object_type': 0,
     'bounding_box': bounding_box_defaults.BOUNDING_BOX_JSON_DEFAULT,

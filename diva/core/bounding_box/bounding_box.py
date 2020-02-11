@@ -1,12 +1,14 @@
 from dataclasses import dataclass
 from typing import Tuple
 
-from . import get_bounding_box_summary
+from frater.data_type import DataType
 from frater.logging import get_summary
+
+from . import get_bounding_box_summary
 
 
 @dataclass
-class BoundingBox:
+class BoundingBox(DataType):
     x: float = 0.0
     y: float = 0.0
     w: float = 0.0

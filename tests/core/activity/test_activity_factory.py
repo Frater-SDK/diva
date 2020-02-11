@@ -8,7 +8,6 @@ class TestActivityFactory(TestCase):
     def test_json_to_activity(self):
         activity = MOCKS.frater.activity
         activity_json = MOCKS.json.activity
-
         assert json_to_activity(activity_json) == activity
 
     def test_activity_to_json(self):

@@ -1,11 +1,12 @@
-from enum import Enum
+import json
+from enum import IntEnum
 
 __long_names__ = ['Null', 'Door', 'Tree', 'Receptacle', 'Dumpster', 'Parking_Meter', 'ATM', 'Umbrella',
                   'Construction_Barrier', 'Other', 'Person', 'Vehicle', 'Bike', 'Construction_Vehicle',
                   'Push_Pulled_Object', 'Prop', 'Animal', 'Articulated_Infrastructure']
 
 
-class ObjectType(Enum):
+class ObjectType(IntEnum):
     """
     Object Types for DIVA
     """
@@ -35,3 +36,17 @@ class ObjectType(Enum):
     @classmethod
     def from_long_name(cls, long_name: str) -> 'ObjectType':
         return ObjectType(__long_names__.index(long_name))
+
+    def to_dict(self):
+        return {'data_type': 'object_type', 'object_type': self.value}
+
+    def to_json(self):
+        return json.dumps(self.to_dict())
+
+    @classmethod
+    def from_dict(cls, d: dict):
+        return ObjectType(d['object_type'])
+
+    @classmethod
+    def from_json(cls, s: str):
+        return ObjectType.from_dict(json.loads(s))

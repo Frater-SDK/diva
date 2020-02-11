@@ -1,9 +1,10 @@
 from typing import Dict
 
+from frater.validation.json import validate_json
+
 from .trajectory import Trajectory
 from .trajectory_defaults import TRAJECTORY_JSON_DEFAULT
 from ..bounding_box.bounding_box_factory import *
-from ...validation.json import validate_json
 
 __all__ = ['json_to_trajectory', 'trajectory_to_json',
            'diva_format_to_trajectory']

@@ -1,14 +1,16 @@
 from dataclasses import dataclass, field
 from typing import List, Union
 
+from frater.data_type import DataType
+from frater.logging import get_summary
+
 from .trajectory_summary import get_trajectory_summary
 from ..bounding_box import BoundingBox, combine_bounding_boxes, linear_interpolate_bounding_boxes
 from ..temporal_range import TemporalRange
-from ...logging import get_summary
 
 
 @dataclass
-class Trajectory:
+class Trajectory(DataType):
     bounding_boxes: List[BoundingBox] = field(default_factory=list)
 
     def __init__(self, bounding_boxes: List[BoundingBox] = None, **kwargs):

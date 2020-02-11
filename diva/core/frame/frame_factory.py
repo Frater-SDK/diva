@@ -5,7 +5,7 @@ from frater.validation.json import validate_json
 from .frame import Frame, CroppedFrame
 from .frame_defaults import FRAME_JSON_DEFAULT, CROPPED_FRAME_JSON_DEFAULT
 from .modality import Modality
-from ..bounding_box import json_to_bounding_box, bounding_box_to_json
+from ..bounding_box.bounding_box_factory import json_to_bounding_box, bounding_box_to_json
 
 __all__ = ['frame_to_json', 'cropped_frame_to_json', 'json_to_frame', 'json_to_cropped_frame']
 

@@ -7,7 +7,7 @@ from .object import Object
 from .object_defaults import OBJECT_JSON_DEFAULT, OBJECT_DETECTION_JSON_DEFAULT
 from .object_detection import ObjectDetection
 from .object_type import ObjectType
-from ..bounding_box import json_to_bounding_box, bounding_box_to_json
+from ..bounding_box.bounding_box_factory import *
 from ..trajectory.trajectory_factory import *
 
 __all__ = ['json_to_object', 'json_to_object_detection', 'object_to_json',

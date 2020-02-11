@@ -1,6 +1,7 @@
 from dataclasses import dataclass, field
 
 from PIL.Image import Image
+from frater.data_type import DataType
 from frater.logging import get_summary
 
 from .frame_summary import get_frame_summary, get_cropped_frame_summary
@@ -9,7 +10,7 @@ from ..bounding_box import BoundingBox
 
 
 @dataclass
-class Frame:
+class Frame(DataType):
     image: Image = field(default_factory=Image)
     modality: Modality = field(default=Modality.RGB)
     index: int = 0
