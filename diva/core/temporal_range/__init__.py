@@ -1,12 +1,9 @@
-from frater.io import register_json_serializer, register_json_deserializer
-
+from frater.data_type import data_types
 from .temporal_range import TemporalRange
 from .temporal_range_defaults import TEMPORAL_RANGE_JSON_DEFAULT
-from .temporal_range_factory import *
 from .temporal_range_functions import *
 from .temporal_range_summary import *
 
-register_json_serializer(TemporalRange, temporal_range_to_json)
-register_json_deserializer(TEMPORAL_RANGE_JSON_DEFAULT['data_type'], json_to_temporal_range)
+data_types.register_class(TemporalRange.data_type(), TemporalRange)
 
 __all__ = ['TemporalRange', 'compute_temporal_iou', 'get_temporal_range_summary']

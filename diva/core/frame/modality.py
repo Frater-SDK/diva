@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import IntEnum
 
 
-class Modality(Enum):
+class Modality(IntEnum):
     RGB = 0
     OPTICAL_FLOW = 1
     INFRARED = 2

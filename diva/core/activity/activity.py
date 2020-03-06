@@ -4,7 +4,6 @@ from uuid import uuid4
 
 from frater.data_type import DataType
 from frater.logging import get_summary
-
 from .activity_proposal import ActivityProposal
 from .activity_summary import get_activity_summary
 from .activity_type import ActivityType
@@ -19,7 +18,7 @@ class Activity(DataType):
     including its spatio-temporal location in the video, the objects corresponding to the activity, the
     activity type, and other metadata.
 
-    The activity's spatio-temporal location is represented by a :py:class:`~frater.core.trajectory.Trajectory`
+    The activity's spatio-temporal location is represented by a :py:class:`~diva.core.trajectory.Trajectory`
 
     **Examples**
 
