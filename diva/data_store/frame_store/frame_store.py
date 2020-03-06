@@ -3,8 +3,8 @@ from dataclasses import dataclass
 from functools import lru_cache
 
 from PIL import Image
-from frater.data_store import FileStore, FileStoreConfig
 
+from frater.data_store import FileStore, FileStoreConfig
 from ...core import Frame, Modality, TemporalRange
 
 
@@ -31,7 +31,7 @@ class FrameStore(FileStore):
     def ignore_modality(self):
         return self.config.ignore_modality
 
-    @lru_cache
+    @lru_cache(128)
     def get_frame(self, video, frame_index, modality=Modality.RGB, experiment: str = '', timestamp: str = ''):
         if not self.frame_exists(video, modality, frame_index):
             return None
