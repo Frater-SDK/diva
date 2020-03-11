@@ -1,18 +1,17 @@
 from dataclasses import dataclass, field
 from uuid import uuid4
 
+from frater.category import Category
 from frater.data_type import DataType
 from frater.logging import get_summary
-
 from .object_summary import get_object_detection_summary
-from .object_type import ObjectType
 from ..bounding_box import BoundingBox
 
 
 @dataclass
 class ObjectDetection(DataType):
     object_detection_id: str = field(default_factory=lambda: str(uuid4()))
-    object_type: ObjectType = field(default=ObjectType.NULL)
+    object_type: Category = field(default_factory=lambda: Category(0, 'null', 'diva_objects'))
     bounding_box: BoundingBox = field(default_factory=BoundingBox)
     source_image: str = ''
     source_video: str = ''
