@@ -1,7 +1,6 @@
 from frater.data_type import data_types
 from .bouding_box_summary import *
 from .bounding_box import BoundingBox
-from .bounding_box_defaults import BOUNDING_BOX_JSON_DEFAULT
 from .bounding_box_factory import *
 from .bounding_box_functions import *
 

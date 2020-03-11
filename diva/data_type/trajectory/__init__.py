@@ -1,6 +1,5 @@
 from frater.data_type import data_types
 from .trajectory import Trajectory
-from .trajectory_defaults import TRAJECTORY_JSON_DEFAULT
 from .trajectory_factory import *
 from .trajectory_functions import *
 from .trajectory_summary import *

@@ -1,6 +1,5 @@
 from frater.data_type import data_types
 from .temporal_range import TemporalRange
-from .temporal_range_defaults import TEMPORAL_RANGE_JSON_DEFAULT
 from .temporal_range_functions import *
 from .temporal_range_summary import *
 

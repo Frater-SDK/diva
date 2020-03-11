@@ -6,6 +6,5 @@ from .temporal_range import TemporalRange
 from .trajectory import Trajectory
 from .video import Video
 
-__all__ = ['Activity', 'ActivityProposal', 'ActivityType', 'ActivityTypeGroup',
-           'BoundingBox', 'Frame', 'CroppedFrame', 'Modality', 'Object',
-           'ObjectDetection', 'ObjectType', 'TemporalRange', 'Trajectory', 'Video']
+__all__ = ['Activity', 'ActivityProposal', 'BoundingBox', 'Frame', 'CroppedFrame', 'Modality',
+           'Object', 'ObjectDetection', 'TemporalRange', 'Trajectory', 'Video']

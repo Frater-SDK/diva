@@ -1,6 +1,5 @@
 from frater.data_type import data_types
 from .frame import Frame, CroppedFrame
-from .frame_defaults import FRAME_JSON_DEFAULT, CROPPED_FRAME_JSON_DEFAULT
 from .frame_summary import *
 from .modality import Modality
 
