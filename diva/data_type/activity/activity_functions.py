@@ -1,18 +1,18 @@
 from typing import List
 
+from frater.category import Category
 from .activity import Activity
 from .activity_proposal import ActivityProposal
-from .activity_type import ActivityType
 
 __all__ = ['activity_to_proposal', 'proposal_to_activity']
 
 
-def proposal_to_activity(proposal: ActivityProposal, activity_type: ActivityType = ActivityType.NULL,
+def proposal_to_activity(proposal: ActivityProposal, activity_type: Category = None,
                          confidence: float = 0.0, probabilities=None):
     """This function converts a proposal into an activity.
 
     :param ActivityProposal proposal: proposal for building new activity
-    :param ActivityType activity_type: activity type of the new activity
+    :param Category activity_type: activity type of the new activity
     :param float confidence: confidence of the activity
     :param List[float] probabilities: list of probabilities for the possible activity types
     :return: returns an :py:class:`~frater.core.activity.Activity` built from provided :py:class:`~frater.core.activity.ActivityProposal`
@@ -21,7 +21,9 @@ def proposal_to_activity(proposal: ActivityProposal, activity_type: ActivityType
     """
     if probabilities is None:
         probabilities = []
-
+    if activity_type is None:
+        activity_type = Category(0, 'null', 'diva_activities')
+        
     return Activity(proposal_id=proposal.proposal_id, activity_type=activity_type, trajectory=proposal.trajectory,
                     objects=proposal.objects, source_video=proposal.source_video,
                     experiment=proposal.experiment, confidence=confidence, probabilities=probabilities)
