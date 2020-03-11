@@ -3,10 +3,10 @@ from setuptools import setup, find_packages
 packages = find_packages(exclude=['tests*'])
 dependencies = list(line.strip() for line in open('requirements.txt').readlines())
 setup(
-    name='diva',
-    version='0.1',
+    name='diva-frater',
+    version='0.1.1',
     packages=packages,
-    url='https://github.ibm.com/john.l.henning/diva-frater',
+    url='https://github.com/frater/diva',
     license='MIT',
     author='John Henning',
     author_email='john.l.henning@ibm.com',

@@ -3,8 +3,7 @@ from typing import List
 
 from frater.component import BatchComponent, BatchComponentConfig
 from frater.stream import InputStream, OutputStream
-
-from diva.core import Activity, ActivityProposal, Modality
+from ...data_type import Activity, ActivityProposal, Modality
 
 
 @dataclass

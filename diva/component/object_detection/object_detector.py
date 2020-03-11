@@ -1,17 +1,18 @@
 from dataclasses import dataclass, field
 from typing import List, Set, Iterable
 
+from frater.category import Category
 from frater.component import BatchComponent, BatchComponentConfig
 from frater.stream import OutputStream, InputStream
-from ...core import ObjectType, ObjectDetection, Frame
 from ...data_store import FrameStoreConfig, FrameStore
+from ...data_type import ObjectDetection, Frame
 
 
 @dataclass
 class ObjectDetectorConfig(BatchComponentConfig):
     frame_store_config: FrameStoreConfig = field(default_factory=FrameStoreConfig)
     batch_size: int = 8
-    object_types: Set[ObjectType] = field(default_factory=set)
+    object_types: Set[Category] = field(default_factory=set)
 
 
 class ObjectDetector(BatchComponent):

@@ -5,7 +5,7 @@ from functools import lru_cache
 from PIL import Image
 
 from frater.data_store import FileStore, FileStoreConfig
-from ...core import Frame, Modality, TemporalRange
+from ...data_type import Frame, Modality, TemporalRange
 
 
 @dataclass

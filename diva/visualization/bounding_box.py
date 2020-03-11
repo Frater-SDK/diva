@@ -1,6 +1,6 @@
 from PIL import ImageDraw
 
-from ..core import Frame, BoundingBox
+from ..data_type import Frame, BoundingBox
 
 
 def draw_bounding_box(bounding_box: BoundingBox, frame: Frame, color='red'):
