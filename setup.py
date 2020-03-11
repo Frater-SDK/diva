@@ -4,7 +4,7 @@ packages = find_packages(exclude=['tests*'])
 dependencies = list(line.strip() for line in open('requirements.txt').readlines())
 setup(
     name='diva-frater',
-    version='0.1.2',
+    version='0.1.3',
     packages=packages,
     url='https://github.com/frater/diva',
     license='MIT',

@@ -3,7 +3,6 @@ from typing import List, Union
 
 from frater.data_type import DataType
 from frater.logging import get_summary
-
 from .trajectory_summary import get_trajectory_summary
 from ..bounding_box import BoundingBox, combine_bounding_boxes, linear_interpolate_bounding_boxes
 from ..temporal_range import TemporalRange

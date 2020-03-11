@@ -4,7 +4,6 @@ from uuid import uuid4
 
 from frater.data_type import DataType
 from frater.logging import get_summary
-
 from .activity_summary import get_activity_proposal_summary
 from ..bounding_box import BoundingBox
 from ..object import Object

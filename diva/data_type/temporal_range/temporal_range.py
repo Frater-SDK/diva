@@ -2,7 +2,6 @@ from dataclasses import dataclass
 
 from frater.data_type import DataType
 from frater.logging import get_summary
-
 from .temporal_range_summary import get_temporal_range_summary
 
 

@@ -1,7 +1,6 @@
 from typing import Dict
 
 from frater.validation.json import validate_json
-
 from .video import Video
 from .video_defaults import VIDEO_JSON_DEFAULT
 

@@ -1,7 +1,7 @@
-from .activity import Activity, ActivityProposal, ActivityType, ActivityTypeGroup
+from .activity import Activity, ActivityProposal
 from .bounding_box import BoundingBox
 from .frame import Frame, CroppedFrame, Modality
-from .object import Object, ObjectType, ObjectDetection
+from .object import Object, ObjectDetection
 from .temporal_range import TemporalRange
 from .trajectory import Trajectory
 from .video import Video

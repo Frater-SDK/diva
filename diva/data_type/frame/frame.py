@@ -1,9 +1,9 @@
 from dataclasses import dataclass, field
 
 from PIL.Image import Image
+
 from frater.data_type import DataType
 from frater.logging import get_summary
-
 from .frame_summary import get_frame_summary, get_cropped_frame_summary
 from .modality import Modality
 from ..bounding_box import BoundingBox

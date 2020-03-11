@@ -9,5 +9,5 @@ def compute_temporal_iou(t_0: TemporalRange, t_1: TemporalRange) -> float:
 
     if union == 0:
         return 0.0
-    
+
     return max(0.0, intersection / union)
