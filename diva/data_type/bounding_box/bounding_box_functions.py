@@ -32,7 +32,7 @@ def convert_descriptors_to_bounding_box(corners: Tuple[float, float, float, floa
                                         confidence: float, frame_index) -> BoundingBox:
     x_0, y_0, x_1, y_1 = corners
     w, h = x_1 - x_0, y_1 - y_0
-    return BoundingBox(x_0, y_0, w, h, confidence, frame_index)
+    return BoundingBox(x=x_0, y=y_0, w=w, h=h, confidence=confidence, frame_index=frame_index)
 
 
 def linear_interpolate_bounding_boxes(bounding_box_0: BoundingBox, bounding_box_1: BoundingBox) -> List[BoundingBox]:
