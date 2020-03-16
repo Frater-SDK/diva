@@ -4,7 +4,6 @@ from uuid import uuid4
 
 from frater.category import Category
 from frater.data_type import DataType
-from frater.dataset import dataset_factory
 from frater.logging import get_summary
 from .object_summary import get_object_summary
 from ..bounding_box import BoundingBox
@@ -15,7 +14,7 @@ from ..trajectory import Trajectory
 @dataclass
 class Object(DataType):
     object_id: str = field(default_factory=lambda: str(uuid4()))
-    object_type: Category = field(default_factory=lambda: dataset_factory.get('diva_objects').get_category(0))
+    object_type: Category = field(default_factory=lambda: Category(0, 'null', 'diva_objects'))
     trajectory: Trajectory = field(default_factory=Trajectory)
     source_video: str = ''
     experiment: str = ''

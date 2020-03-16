@@ -32,7 +32,7 @@ class Activity(DataType):
     """
     activity_id: str = field(default_factory=lambda: str(uuid4()))
     proposal_id: str = ''
-    activity_type: Category = field(default_factory=Category(index=0, label='null', dataset='diva_activities'))
+    activity_type: Category = field(default_factory=lambda: Category(index=0, label='null', dataset='diva_activities'))
     trajectory: Trajectory = field(default_factory=Trajectory)
     objects: List[Object] = field(default_factory=list)
     source_video: str = ''
