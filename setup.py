@@ -5,7 +5,7 @@ dependencies = list(line.strip() for line in open('requirements.txt').readlines(
 
 setup(
     name='diva-frater',
-    version='0.1.7',
+    version='0.1.8',
     packages=packages,
     url='https://github.com/frater/diva',
     license='MIT',
