@@ -3,7 +3,7 @@ import uuid
 from functools import reduce
 from typing import Dict
 
-from frater.dataset import dataset_factory, Dataset
+from frater.data.dataset import dataset_factory, Dataset
 from .activity import Activity
 from ..object.object_factory import *
 from ..trajectory import Trajectory

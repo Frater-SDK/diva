@@ -2,7 +2,7 @@ from dataclasses import dataclass, field
 from datetime import datetime
 from uuid import uuid4
 
-from frater.data_type import DataType
+from frater.data.data_type import DataType
 
 
 @dataclass

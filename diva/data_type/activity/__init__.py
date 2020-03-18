@@ -1,4 +1,4 @@
-from frater.data_type import data_types
+from frater.data import data_types
 from .activity import Activity
 from .activity_factory import *
 from .activity_functions import *

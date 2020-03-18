@@ -1,6 +1,6 @@
 from typing import List
 
-from frater.category import Category
+from frater.data.category import Category
 from .activity import Activity
 from .activity_proposal import ActivityProposal
 
@@ -23,7 +23,7 @@ def proposal_to_activity(proposal: ActivityProposal, activity_type: Category = N
         probabilities = []
     if activity_type is None:
         activity_type = Category(0, 'null', 'diva_activities')
-        
+
     return Activity(proposal_id=proposal.proposal_id, activity_type=activity_type, trajectory=proposal.trajectory,
                     objects=proposal.objects, source_video=proposal.source_video,
                     experiment=proposal.experiment, confidence=confidence, probabilities=probabilities)

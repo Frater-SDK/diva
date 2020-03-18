@@ -1,4 +1,4 @@
-from frater.data_type import data_types
+from frater.data import data_types
 from .trajectory import Trajectory
 from .trajectory_factory import *
 from .trajectory_functions import *

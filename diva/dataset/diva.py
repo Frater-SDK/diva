@@ -1,4 +1,4 @@
-from frater.dataset import Dataset
+from frater.data.dataset import Dataset
 
 diva_activities = Dataset('diva_activities', ['null',
                                               'person_opens_facility_door',

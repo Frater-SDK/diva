@@ -2,8 +2,8 @@ from dataclasses import dataclass, field
 from typing import Union
 from uuid import uuid4
 
-from frater.category import Category
-from frater.data_type import DataType
+from frater.data.category import Category
+from frater.data.data_type import DataType
 from frater.logging import get_summary
 from .object_summary import get_object_summary
 from ..bounding_box import BoundingBox

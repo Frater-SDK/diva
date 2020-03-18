@@ -1,4 +1,4 @@
-from frater.data_type import data_types
+from frater.data import data_types
 from .temporal_range import TemporalRange
 from .temporal_range_functions import *
 from .temporal_range_summary import *

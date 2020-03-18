@@ -1,4 +1,4 @@
-from frater.dataset import Dataset
+from frater.data.dataset import Dataset
 
 something_something = Dataset('something_something', [
     "Doing other things",  # 0

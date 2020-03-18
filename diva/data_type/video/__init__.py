@@ -1,4 +1,4 @@
-from frater.data_type import data_types
+from frater.data import data_types
 from .video import Video
 from .video_summary import *
 

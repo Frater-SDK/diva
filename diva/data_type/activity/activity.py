@@ -2,8 +2,8 @@ from dataclasses import dataclass, field
 from typing import List, Union
 from uuid import uuid4
 
-from frater.category import Category
-from frater.data_type import DataType
+from frater.data.category import Category
+from frater.data.data_type import DataType
 from frater.logging import get_summary
 from .activity_proposal import ActivityProposal
 from .activity_summary import get_activity_summary

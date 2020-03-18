@@ -1,4 +1,4 @@
-from frater.data_type import data_types
+from frater.data import data_types
 from .frame import Frame, CroppedFrame
 from .frame_summary import *
 from .modality import Modality

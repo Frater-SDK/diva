@@ -1,4 +1,4 @@
-from frater.data_type import data_types
+from frater.data import data_types
 from .object import Object
 from .object_detection import ObjectDetection
 from .object_factory import *

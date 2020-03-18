@@ -1,7 +1,7 @@
 from typing import Dict
 from uuid import UUID
 
-from frater.dataset import dataset_factory
+from frater.data.dataset import dataset_factory
 from .object import Object
 from ..trajectory.trajectory_factory import *
 

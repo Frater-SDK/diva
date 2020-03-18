@@ -1,4 +1,4 @@
-from frater.data_type import data_types
+from frater.data import data_types
 from .bouding_box_summary import *
 from .bounding_box import BoundingBox
 from .bounding_box_factory import *

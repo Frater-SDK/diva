@@ -1,8 +1,8 @@
 from dataclasses import dataclass, field
 from typing import List, Set, Iterable
 
-from frater.category import Category
 from frater.component import BatchComponent, BatchComponentConfig
+from frater.data.category import Category
 from frater.stream import OutputStream, InputStream
 from ...data_store import FrameStoreConfig, FrameStore
 from ...data_type import ObjectDetection, Frame

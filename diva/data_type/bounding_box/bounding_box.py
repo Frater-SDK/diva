@@ -1,7 +1,7 @@
 from dataclasses import dataclass
 from typing import Tuple
 
-from frater.data_type import DataType
+from frater.data.data_type import DataType
 from frater.logging import get_summary
 from . import get_bounding_box_summary
 

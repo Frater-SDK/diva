@@ -1,4 +1,4 @@
-from frater.dataset import dataset_factory
+from frater.data.dataset import dataset_factory
 from .diva import diva_activities, diva_objects
 from .something_something import something_something
 
