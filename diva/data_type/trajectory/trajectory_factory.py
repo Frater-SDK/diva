@@ -13,4 +13,4 @@ def diva_format_to_trajectory(trajectory: Dict) -> Trajectory:
             continue
         bounding_boxes.append(diva_format_to_bounding_box(bounding_box))
 
-    return Trajectory(bounding_boxes)
+    return Trajectory(bounding_boxes=bounding_boxes)

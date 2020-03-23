@@ -22,7 +22,7 @@ class BoundingBox(DataType):
         h = max(self.y_1, other.y_1) - y
         confidence = max(self.confidence, other.confidence)
         frame_index = self.frame_index
-        return BoundingBox(x, y, w, h, confidence, frame_index)
+        return BoundingBox(x=x, y=y, w=w, h=h, confidence=confidence, frame_index=frame_index)
 
     @property
     def x_0(self) -> float:
@@ -72,7 +72,7 @@ class BoundingBox(DataType):
 
         confidence = max(self.confidence, other.confidence)
         frame = self.frame_index
-        return BoundingBox(x, y, w, h, confidence, frame)
+        return BoundingBox(x=x, y=y, w=w, h=h, confidence=confidence, frame_index=frame)
 
     @classmethod
     def init_from_corners(cls, corners: Tuple[float, float, float, float],
@@ -80,11 +80,11 @@ class BoundingBox(DataType):
         x_0, y_0, x_1, y_1 = corners
         width = x_1 - x_0
         height = y_1 - y_0
-        return BoundingBox(x_0, y_0, width, height, confidence, frame_index)
+        return BoundingBox(x=x_0, y=y_0, w=width, h=height, confidence=confidence, frame_index=frame_index)
 
     @classmethod
     def init_from_center(cls, center: Tuple[float, float], width: float, height: float,
                          confidence: float = 0.0, frame_index: int = 0) -> 'BoundingBox':
         x = center[0] - (width / 2)
         y = center[1] - (height / 2)
-        return BoundingBox(x, y, width, height, confidence, frame_index)
+        return BoundingBox(x=x, y=y, w=width, h=height, confidence=confidence, frame_index=frame_index)

@@ -63,9 +63,10 @@ class Activity(DataType):
             objects = [object[max(item.start, object.start_frame):min(item.stop, object.end_frame)]
                        for object in self.objects]
 
-            return Activity(self.activity_id, self.proposal_id, self.activity_type,
-                            trajectory, objects, self.source_video, self.experiment,
-                            self.confidence, self.probabilities)
+            return Activity(activity_id=self.activity_id, proposal_id=self.proposal_id,
+                            activity_type=self.activity_type, trajectory=trajectory, objects=objects,
+                            source_video=self.source_video, experiment=self.experiment,
+                            confidence=self.confidence, probabilities=self.probabilities)
 
     @property
     def temporal_range(self):
@@ -89,7 +90,7 @@ class Activity(DataType):
         :py:class:`~frater.core.activity.ActivityProposal`
 
         :param ActivityProposal proposal: proposal for building new activity
-        :param ActivityType activity_type: activity type of the new activity
+        :param Category activity_type: activity type of the new activity
         :param float confidence: confidence of the activity
         :param List[float] probabilities: list of probabilities for the possible activity types
         :return: returns an :py:class:`~frater.core.activity.Activity` built from provided :py:class:`~frater.core.activity.ActivityProposal`

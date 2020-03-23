@@ -27,7 +27,8 @@ class Object(DataType):
             return self.trajectory[item]
         elif isinstance(item, slice):
             trajectory = self.trajectory[item]
-            return Object(self.object_id, self.object_type, trajectory, self.source_video, self.experiment)
+            return Object(object_id=self.object_id, object_type=self.object_type, trajectory=trajectory,
+                          source_video=self.source_video, experiment=self.experiment)
 
     @property
     def temporal_range(self) -> TemporalRange:

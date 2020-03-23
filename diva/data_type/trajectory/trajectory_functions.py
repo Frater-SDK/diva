@@ -16,4 +16,4 @@ def compute_spatiotemporal_iou(trajectory: Trajectory, other_trajectory: Traject
 
 def scale_trajectory(trajectory: Trajectory, scale: float = 1.0) -> Trajectory:
     bounding_boxes = [scale_bounding_box(bounding_box, scale) for bounding_box in trajectory.bounding_boxes]
-    return Trajectory(bounding_boxes)
+    return Trajectory(bounding_boxes=bounding_boxes)

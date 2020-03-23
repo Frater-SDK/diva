@@ -43,4 +43,5 @@ class ActivityProposal(DataType):
             trajectory = self.trajectory[item]
             objects = [object[max(item.start, object.start_frame):min(item.stop, object.end_frame)]
                        for object in self.objects]
-            return ActivityProposal(self.proposal_id, trajectory, objects, self.source_video, self.experiment)
+            return ActivityProposal(proposal_id=self.proposal_id, trajectory=trajectory, objects=objects,
+                                    source_video=self.source_video, experiment=self.experiment)

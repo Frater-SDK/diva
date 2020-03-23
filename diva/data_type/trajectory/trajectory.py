@@ -25,7 +25,7 @@ class Trajectory(DataType):
     def temporal_range(self):
         start = self.bounding_boxes[0].frame_index if len(self.bounding_boxes) > 0 else 0
         end = self.bounding_boxes[-1].frame_index if len(self.bounding_boxes) > 0 else 0
-        return TemporalRange(start, end)
+        return TemporalRange(start_frame=start, end_frame=end)
 
     @property
     def start_frame(self) -> int:
@@ -51,13 +51,13 @@ class Trajectory(DataType):
             # inclusive end index
             stop = item.stop - self.start_frame + 1 if item.stop else None
             bounding_boxes = self.bounding_boxes[start:stop]
-            return Trajectory(bounding_boxes)
+            return Trajectory(bounding_boxes=bounding_boxes)
 
     def __add__(self, other: 'Trajectory') -> 'Trajectory':
         if len(self) == 0:
-            return Trajectory(other.bounding_boxes)
+            return Trajectory(bounding_boxes=other.bounding_boxes)
         if len(other) == 0:
-            return Trajectory(self.bounding_boxes)
+            return Trajectory(bounding_boxes=self.bounding_boxes)
 
         temporal_range = self.temporal_range.union(other.temporal_range)
         bounding_boxes = list()
@@ -72,7 +72,7 @@ class Trajectory(DataType):
             if len(current_boxes) > 0:
                 bounding_boxes.append(combine_bounding_boxes(current_boxes))
 
-        return Trajectory(bounding_boxes)
+        return Trajectory(bounding_boxes=bounding_boxes)
 
     def volume(self):
         return sum(bounding_box.area() for bounding_box in self.bounding_boxes)
@@ -85,7 +85,7 @@ class Trajectory(DataType):
             other_bounding_box = other[i]
             bounding_boxes.append(bounding_box.intersect(other_bounding_box))
 
-        return Trajectory(bounding_boxes)
+        return Trajectory(bounding_boxes=bounding_boxes)
 
     def union(self, other: 'Trajectory') -> 'Trajectory':
         return self + other

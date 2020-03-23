@@ -35,8 +35,8 @@ class Frame(DataType):
             image = self.image.crop(location)
         else:
             image = None
-        return CroppedFrame(image, self.modality, self.index, self.source_video,
-                            self.experiment, self.timestamp, bounding_box)
+        return CroppedFrame(image=image, modality=self.modality, index=self.index, source_video=self.source_video,
+                            experiment=self.experiment, timestamp=self.timestamp, source_location=bounding_box)
 
 
 @dataclass

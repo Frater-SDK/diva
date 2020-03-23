@@ -24,9 +24,7 @@ def proposal_to_activity(proposal: ActivityProposal, activity_type: Category = N
     if activity_type is None:
         activity_type = Category(0, 'null', 'diva_activities')
 
-    return Activity(proposal_id=proposal.proposal_id, activity_type=activity_type, trajectory=proposal.trajectory,
-                    objects=proposal.objects, source_video=proposal.source_video,
-                    experiment=proposal.experiment, confidence=confidence, probabilities=probabilities)
+    return Activity.init_from_activity_proposal(proposal, activity_type, confidence, probabilities)
 
 
 def activity_to_proposal(activity: Activity) -> ActivityProposal:

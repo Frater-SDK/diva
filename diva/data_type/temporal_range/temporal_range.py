@@ -24,7 +24,9 @@ class TemporalRange(DataType):
             yield i
 
     def union(self, other: 'TemporalRange'):
-        return TemporalRange(min(self.start_frame, other.start_frame), max(self.end_frame, other.end_frame))
+        return TemporalRange(start_frame=min(self.start_frame, other.start_frame),
+                             end_frame=max(self.end_frame, other.end_frame))
 
     def intersect(self, other: 'TemporalRange'):
-        return TemporalRange(max(self.start_frame, other.start_frame), min(self.end_frame, other.end_frame))
+        return TemporalRange(start_frame=max(self.start_frame, other.start_frame),
+                             end_frame=min(self.end_frame, other.end_frame))

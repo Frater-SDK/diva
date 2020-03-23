@@ -13,4 +13,4 @@ def diva_format_to_bounding_box(bounding_box: Tuple[str, Dict]) -> BoundingBox:
     w = data['boundingBox']['w']
     h = data['boundingBox']['h']
     confidence = data['presenceConf']
-    return BoundingBox(x, y, w, h, confidence, frame_index)
+    return BoundingBox(x=x, y=y, w=w, h=h, confidence=confidence, frame_index=frame_index)
