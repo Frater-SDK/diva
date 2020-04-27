@@ -1,1 +1,1 @@
-from .activity_classifier import ActivityClassifier
+from .activity_classifier import ActivityClassifier, ActivityClassifierConfig

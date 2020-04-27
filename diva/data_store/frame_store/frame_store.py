@@ -38,7 +38,7 @@ class FrameStore(FileStore):
 
         frame_path = self.get_frame_path(video, modality, frame_index)
         frame_img = Image.open(frame_path)
-        return Frame(frame_img, modality=modality, index=frame_index, source_video=video,
+        return Frame(image=frame_img, modality=modality, index=frame_index, source_video=video,
                      experiment=experiment, timestamp=timestamp)
 
     def get_frames(self, video, frame_indices, modality=Modality.RGB, experiment: str = ''):
